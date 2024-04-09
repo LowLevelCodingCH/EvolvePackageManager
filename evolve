@@ -13,15 +13,16 @@ def get_free_disk_space():
             free_space_gb = disk_usage.free / (1024 ** 3)  # Convert bytes to megabytes
             return free_space_gb
 
-def extract_package(package_file):
-    print(f"\033[1m\033[1;33mExtracting Package: {package_file}\033[0m")
-    os.system(f"tar -xzvf {package_file}")
+def extract_package(package_file, outdir):
+    print(f"\033[1m\033[1;33mExtracting Package: {package_file} into {outdir}\033[0m")
+    os.makedirs(outdir, exist_ok=True)
+    os.system(f"tar -xzvf {package_file} -C {outdir} --strip-components=1")
     return package_file.split('.')[0]
 
 def compile_package(package_dir):
     print(f"\033[1m\033[1;33mCompiling Package: {package_dir}\033[0m")
     # Code to compile package, e.g., run 'make packcompile'
-    os.system(f"cd {package_dir} && make packcompile")
+    os.system(f"cd {package_dir} && make packcompile && cd ..")
 
 def copy_binary(binary_path, destination_path):
     print(f"\033[1m\033[0;32mInstalling Binary: {binary_path} -> {destination_path}\033[0m")
@@ -37,15 +38,14 @@ def install_package(sarg2: str):
         package_file = sarg2 ## download_package(package_url, download_dir)
         
         # Extract package
-        package_dir = extract_package(package_file) 
+        package_dir = extract_package(package_file, sarg2.split(".")[0]) 
         print(f"\033[1m\033[1;33mFree disk space: {get_free_disk_space():.2f}GB\033[0m")
         a = input("Do you wish to continue? [Y/N]: ")
         if(a.upper() == "Y"):
             # Compile package
             compile_package(package_dir)
-            
             # Read path from file and copy binary to specified location
-            with open(f"{package_dir}/Path", "r") as f:
+            with open(f"{sarg2.split('.')[0]}/Path", "r") as f:
                 frs = f.read().split("\n")
                 extpath = frs[0]
                 binaryfiles = frs[1].split(" ")
@@ -67,8 +67,9 @@ def remove_package(rbin: str):
         print(f"\033[1m\033[1;33mFree disk space: {get_free_disk_space():.2f}GB\033[0m")
         a = input("Do you wish to continue? [Y/N]: ")
         if(a.upper() == "Y"):
-            k = extract_package(rbin)
-            with open(k + "/Path", "r") as fa:
+            k = extract_package(rbin, rbin.split(".")[0])
+            ka = rbin.split(".")[0]
+            with open(ka + "/Path", "r") as fa:
                 i = 1
                 d = fa.read().split("\n")[1].split(" ")
                 for dd in d:
