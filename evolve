@@ -16,13 +16,13 @@ def get_free_disk_space():
 def extract_package(package_file, outdir):
     print(f"\033[1m\033[1;33mExtracting Package: {package_file} into {outdir}\033[0m")
     os.makedirs(outdir, exist_ok=True)
-    os.system(f"tar -xzvf {package_file} -C {outdir} --strip-components=1")
+    os.system(f"tar -xzvf {package_file} -C {outdir} --strip-components=1 > /dev/null")
     return package_file.split('.')[0]
 
 def compile_package(package_dir):
     print(f"\033[1m\033[1;33m\033[1m\033[1;33mEvolving Package: {package_dir}\033[0m")
     # Code to compile package, e.g., run 'make packcompile'
-    os.system(f"cd {package_dir} && make packcompile && cd ..")
+    os.system(f"cd {package_dir} && make packcompile > /dev/null && cd ..")
 
 def copy_binary(binary_path, destination_path):
     print(f"\033[1m\033[0;32mInstalling Binary: {binary_path} -> {destination_path}\033[0m")
