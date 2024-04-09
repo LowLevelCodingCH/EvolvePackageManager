@@ -11,8 +11,7 @@ binary Path (inside of the .tar.gz file)
 ### Makefile:
 contains:
 ```makefile
-packcompile:
-  (commands to compile the package)
+(commands to compile the package)
 ```
 ---
 ### Commands:
