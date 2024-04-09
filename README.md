@@ -18,6 +18,7 @@ contains:
 ``-Si`` - System Install
 ``-Sr`` - System Remove
 ``-Gg`` - Git Get
+``-Gl`` - Git List
 ---
 
 \
