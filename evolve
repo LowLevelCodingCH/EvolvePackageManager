@@ -88,20 +88,20 @@ try:
         try:
             install_package(sys.argv[2])
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.tar.gz\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.evp\033[0m")
     elif(sys.argv[1] == "-Sr"):
         try:
             remove_package(sys.argv[2])
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.tar.gz\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.evp\033[0m")
     elif(sys.argv[1] == "-Gg"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
             os.system(f"wget https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null")
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.tar.gz\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.evp\033[0m")
     else:
-        print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.tar.gz\033[0m")
+        print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.evp\033[0m")
 except:
-    print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.tar.gz\033[0m")
+    print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Gg] <package>.evp\033[0m")
 
