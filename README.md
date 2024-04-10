@@ -1,10 +1,10 @@
 # Evolve (Package Manager)
-
+evp = evolve package
 ### Path:
 contains: 
 ```
 extraction Path
-binary Path (inside of the .tar.gz file)
+binary Path (inside of the .evp (.tar.gz) file)
 ```
 ---
 
