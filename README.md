@@ -17,6 +17,8 @@ contains:
 ### Commands:
 ``-Si`` - System Install
 ``-Sr`` - System Remove
+``-Sgi`` - System Git Install
+``-Sgr`` - System Git Remove
 ``-Gg`` - Git Get
 ``-Gl`` - Git List
 ---
