@@ -1,10 +1,10 @@
-# Evolve (Package Manager)
-evp = evolve package
+# XSPM (X Source Package Manager, formerly: Evolve (Package Manager))
+xsp = xspm package
 ### Path:
 contains: 
 ```
 extraction Path
-binary Path (inside of the .evp (.tar.gz) file)
+binary Path (inside of the .xsp (.tar.gz) file)
 ```
 ---
 
