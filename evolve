@@ -104,7 +104,6 @@ try:
         try:
             print(f"\033[1m\033[1;33mGetting File\033[0m")
             os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/README.md > /dev/null")
-            os.system("clear")
             with open("README.md", "r") as f:
                 print("FILE: \n--------------\n")
                 print(f.read())
