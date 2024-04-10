@@ -97,31 +97,31 @@ try:
     elif(sys.argv[1] == "-Gg"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
-            os.system(f"wget https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null")
+            os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null")
         except:
             print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
     elif(sys.argv[1] == "-Gl"):
         try:
             print(f"\033[1m\033[1;33mGetting File\033[0m")
-            os.system(f"wget https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/README.md > /dev/null")
+            os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/README.md > /dev/null")
             os.system("clear")
             with open("README.md", "r") as f:
                 print("FILE: \n--------------\n")
                 print(f.read())
-            os.system("rm README.md")
+                os.system("rm README.md")
         except:
             print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
     elif(sys.argv[1] == "-Sgi"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
-            os.system(f"wget https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null") 
+            os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null") 
             install_package(sys.argv[2])
         except:
             print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
     elif(sys.argv[1] == "-Sgr"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
-            os.system(f"wget https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null") 
+            os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null") 
             remove_package(sys.argv[2])
         except:
             print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
