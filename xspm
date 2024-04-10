@@ -20,7 +20,7 @@ def extract_package(package_file, outdir):
     return package_file.split('.')[0]
 
 def compile_package(package_dir):
-    print(f"\033[1m\033[1;33m\033[1m\033[1;33mEvolving Package: {package_dir}\033[0m")
+    print(f"\033[1m\033[1;33m\033[1m\033[1;33mXSPM Making Package: {package_dir}\033[0m")
     # Code to compile package, e.g., run 'make packcompile'
     os.system(f"cd {package_dir} && make > /dev/null && cd ..")
 
@@ -88,18 +88,18 @@ try:
         try:
             install_package(sys.argv[2])
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     elif(sys.argv[1] == "-Sr"):
         try:
             remove_package(sys.argv[2])
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     elif(sys.argv[1] == "-Gg"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
             os.system(f"wget -q https://github.com/LowLevelCodingCH/EvolvePackages/raw/main/{sys.argv[2]} > /dev/null")
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     elif(sys.argv[1] == "-Gl"):
         try:
             print(f"\033[1m\033[1;33mGetting File\033[0m")
@@ -109,7 +109,7 @@ try:
                 print(f.read())
                 os.system("rm README.md")
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     elif(sys.argv[1] == "-Sgi"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
@@ -117,7 +117,7 @@ try:
             install_package(sys.argv[2])
             os.system(f"rm -rf {sys.argv[2]}")
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     elif(sys.argv[1] == "-Sgr"):
         try:
             print(f"\033[1m\033[1;33mGetting File {sys.argv[2]}\033[0m")
@@ -125,9 +125,9 @@ try:
             remove_package(sys.argv[2])
             os.system(f"rm -rf {sys.argv[2]}")
         except:
-            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+            print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
     else:
-        print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+        print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
 except:
-    print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [ -Si -Sr -Sgi -Sgr -Gg -Gl] <package>.evp\033[0m")
+    print(f"\033[1m\033[0;31mUSAGE: {sys.argv[0]} [-Si -Sr -Sgi -Sgr -Gg -Gl] <package>.xsp\033[0m")
 
