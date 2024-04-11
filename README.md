@@ -3,7 +3,7 @@ formerly: Evolve (Package Manager) (evp = evolve package)
 xsp = xspm package
 
 \
-## IMPORTANT: IF YOU ENCOUNTER ANY ERROR WITH THAT IT DOESNT WORK, RUN "sudo <text editor> /bin/xspm" AND CHANGE "#!/bin/python3.10" TO "#!/bin/python3" IF YOU HAVE PYTHON INSTALLED, IF NOT, YOU HAVE TO.
+## IMPORTANT: IF YOU ENCOUNTER ANY ERROR WITH THAT IT DOESNT WORK, RUN "sudo (any text editor) /bin/xspm" AND CHANGE "#!/bin/python3.10" TO "#!/bin/python3" IF YOU HAVE PYTHON INSTALLED, IF NOT, YOU HAVE TO.
 
 ### Path:
 contains: 
