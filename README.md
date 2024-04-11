@@ -1,4 +1,14 @@
-# XSPM (X Source Package Manager)
+# DISCONTINUED
+--
+--
+--
+--
+
+
+
+
+
+## XSPM (X Source Package Manager)
 formerly: Evolve (Package Manager) (evp = evolve package) 
 xsp = xspm package
 
